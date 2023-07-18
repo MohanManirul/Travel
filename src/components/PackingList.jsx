@@ -8,8 +8,8 @@ const PackingList = ({items, onToggleItem, onDeleteItem,onCompleteItem,taskList}
         <tr>
         
             <div className="list  float-left">
-                
-                <ul>
+                <ol>
+                    <p>Travel List</p>
                     { sortedItems.length !==0?(sortedItems.map((item) => (
                         <Item
                             key={item.id}
@@ -20,18 +20,18 @@ const PackingList = ({items, onToggleItem, onDeleteItem,onCompleteItem,taskList}
                         />
                     ))) : (<li className='listStyle'>No Item Available</li>)
                     }
-                </ul>           
+                </ol>           
             
             </div>
 
             <div className='float-end'>
                 <div className=''>Complted Task</div>
-                <ul>
+                <ol>
                 { sortTaskLists.length !==0?(sortTaskLists.map((taskItem) => (
                         <li>{taskItem}</li>
                     ))) : (<div className='container'>No Task Available</div>)
                     }
-                </ul>
+                </ol>
             </div>
         </tr>
     );
