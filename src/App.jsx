@@ -2,7 +2,7 @@ import { useState } from "react";
 import Form from "./components/Form";
 import Logo from "./components/Logo";
 import PackingList from "./components/PackingList";
-import Stats from "./components/Stats";
+
 
 
 const App = () => {
@@ -26,6 +26,7 @@ const App = () => {
   }
 
   function addCompleteItem(description){
+   console.log(description);
     settaskList((taskList) => [...taskList, description]);
   }
 
@@ -34,7 +35,7 @@ const App = () => {
       <Logo/>
       <Form onAddItems={handleAddItems} />
       <PackingList items={items} onToggleItem = {handleToggleItem} onDeleteItem={DeleteItem} onCompleteItem={addCompleteItem} taskList={taskList}/>
-      <Stats items={items}/>
+     
     </div>
   );
 };

@@ -1,26 +1,27 @@
 
 
-const Item = ({item, onToggleItem, onDeleteItem , onCompleteItem}) => {
+const Item = ({item, onToggleItem, onDeleteItem , onToggleCompleteItem}) => {
     return (
-       <table>
-            <tr>
+    
+            <ol>
 
                 <td  className='listStyle'>
                     <input 
                         type="checkbox"  
                         value={item.packed}
                         onChange={()=> onToggleItem(item.id)}
+                        onClick={()=> onToggleCompleteItem(item.description)}
                     />
-                    <span className="itemDesign" style={item.packed ? {textDecoration: "line-through"} : {}}>
+                    <span  className="itemDesign" style={item.packed ? {textDecoration: "line-through"} : {}}>
                         {item.quantity} {item.description}
                     </span>
                 
                     <button  onClick={()=> onDeleteItem(item.id)} className="btn btn-danger buttonDesign">Delete</button>
-                    <button onClick={()=> onCompleteItem(item.description)} className="btn btn-success buttonDesign">Complete</button>
+                  
+                    
                 </td>
-            </tr>
+            </ol>
 
-       </table>
     );
 };
 

@@ -8,7 +8,9 @@ const PackingList = ({items, onToggleItem, onDeleteItem,onCompleteItem,taskList}
         <tr>
         
             <div className="list  float-left">
-                <ol>
+             
+
+                <ol className='numberList'>
                     <p>Travel List</p>
                     { sortedItems.length !==0?(sortedItems.map((item) => (
                         <Item
@@ -16,11 +18,11 @@ const PackingList = ({items, onToggleItem, onDeleteItem,onCompleteItem,taskList}
                             item={item}
                             onToggleItem = {onToggleItem}
                             onDeleteItem = {onDeleteItem}
-                            onCompleteItem = {onCompleteItem}
+                            onToggleCompleteItem = {onCompleteItem}
                         />
                     ))) : (<li className='listStyle'>No Item Available</li>)
                     }
-                </ol>           
+                </ol>  
             
             </div>
 
