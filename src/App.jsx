@@ -7,7 +7,6 @@ import PackingList from "./components/PackingList";
 
 const App = () => {
   const [items, setItems] = useState([]);
-  const [taskList, settaskList] = useState([]);
 
   function handleAddItems(item) {
       setItems((items) => [...items, item]);
@@ -25,16 +24,12 @@ const App = () => {
     setItems((items) => items.filter((items) => items.id !== id)) 
   }
 
-  function addCompleteItem(description){
-   console.log(description);
-    settaskList((taskList) => [...taskList, description]);
-  }
 
   return (
     <div className="app">
       <Logo/>
       <Form onAddItems={handleAddItems} />
-      <PackingList items={items} onToggleItem = {handleToggleItem} onDeleteItem={DeleteItem} onCompleteItem={addCompleteItem} taskList={taskList}/>
+      <PackingList items={items} onToggleItem = {handleToggleItem} onDeleteItem={DeleteItem}/>
      
     </div>
   );

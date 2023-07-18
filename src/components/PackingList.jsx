@@ -1,9 +1,8 @@
 
 import Item from './Item';
 
-const PackingList = ({items, onToggleItem, onDeleteItem,onCompleteItem,taskList}) => {
+const PackingList = ({items, onToggleItem, onDeleteItem, onCompleteItem}) => {
     let sortedItems = items; 
-    let sortTaskLists = taskList;
     return (
         <tr>
         
@@ -26,15 +25,6 @@ const PackingList = ({items, onToggleItem, onDeleteItem,onCompleteItem,taskList}
             
             </div>
 
-            <div className='float-end'>
-                <div className=''>Complted Task</div>
-                <ol>
-                { sortTaskLists.length !==0?(sortTaskLists.map((taskItem) => (
-                        <li>{taskItem}</li>
-                    ))) : (<div className='container'>No Task Available</div>)
-                    }
-                </ol>
-            </div>
         </tr>
     );
 };
